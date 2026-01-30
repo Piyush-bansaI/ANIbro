@@ -1,0 +1,60 @@
+const express = require('express');
+const axios = require('axios')
+const router = express.Router()
+const authMiddleware = require('../middlewares/cookieAuth');
+const ANIbroModel = require('../models/bros');
+const exists = require('../usefullFunctions/userExists');
+
+const AI = axios.create({baseURL: process.env.AI_URL})
+
+router.use(authMiddleware)
+
+router.post("/anime-recommender", async (req, res) => {
+    const {id} = req.bro;
+
+    const getUser = await ANIbroModel.findById(id)
+
+    exists(getUser, res)
+
+    const userGenres = getUser.genres
+    
+
+    try {
+        const getANIRecomendation = await AI.post('/recommend-anime', {
+            genres: userGenres
+        })
+
+        
+
+        return res.status(200).json({
+            genre: getANIRecomendation.data.genre
+        })
+    } catch (error) {
+        return res.status(400).json({
+            message: error.response
+        })
+    }
+
+})
+router.post("/manga-recommender", async (req, res) => {
+    const {id} = req.bro;
+
+    const getUser = await ANIbroModel.findById(id)
+
+    exists(getUser, res)
+
+    const userGenres = getUser.genres
+
+    try {
+        const getMANRecomendation = await AI.post('/recommend-manga', {
+            genres: userGenres
+        })
+        return res.status(200).json({
+            'genre': getMANRecomendation.data.genre
+        })
+    } catch (error) {
+        res.status(400).json({message: error.response})
+    }
+})
+
+module.exports = router

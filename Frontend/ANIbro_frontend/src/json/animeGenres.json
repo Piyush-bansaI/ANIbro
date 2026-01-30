@@ -1,0 +1,322 @@
+{
+  "Action": {
+    "mal_id": 1,
+    "bg": "bg-[#2b0f0f]",
+    "bg-2": "before:bg-[#ff6b6b]",
+    "text": "text-[#ff6b6b]",
+    "character": "Naruto Uzumaki",
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/v1769247598/Naruto_Uzumaki__28Part_I_29_hs7apt.webp"
+  },
+  "Adventure": {
+    "mal_id": 2,
+    "bg": "bg-[#0f2b1d]",
+    "bg-2": "before:bg-[#4ade80]",
+    "text": "text-[#4ade80]",
+    "character": "Gon Freecss",
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/e_background_removal,f_png/v1769245786/images_r0rgps.jpg"
+  },
+  "Avant Garde": {
+    "mal_id": 5,
+    "bg": "bg-[#1f1b2e]",
+    "bg-2": "before:bg-[#c4b5fd]",
+    "text": "text-[#c4b5fd]",
+    "character": "Shinji Ikari",
+    "character_url": null
+  },
+  "Award Winning": {
+    "mal_id": 46,
+    "bg": "bg-[#2b240f]",
+    "bg-2": "before:bg-[#facc15]",
+    "text": "text-[#facc15]",
+    "character": null,
+    "character_url": null
+  },
+  "Boys Love": {
+    "mal_id": 28,
+    "bg": "bg-[#2b1020]",
+    "bg-2": "before:bg-[#fb7185]",
+    "text": "text-[#fb7185]",
+    "character": "Mafuyu Sato",
+    "character_url": null
+  },
+  "Comedy": {
+    "mal_id": 4,
+    "bg": "bg-[#2b1f0f]",
+    "bg-2": "before:bg-[#fde047]",
+    "text": "text-[#fde047]",
+    "character": "Random",
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/v1769249141/Comedy_zth9al.png"
+  },
+  "Drama": {
+    "mal_id": 8,
+    "bg": "bg-[#1a0f2b]",
+    "bg-2": "before:bg-[#a78bfa]",
+    "text": "text-[#a78bfa]",
+    "character": "Violet Evergarden",
+    "character_url": null
+  },
+  "Fantasy": {
+    "mal_id": 10,
+    "bg": "bg-[#0f1b2b]",
+    "bg-2": "before:bg-[#7dd3fc]",
+    "text": "text-[#7dd3fc]",
+    "character": "Monkey D. Luffy",
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/e_background_removal,f_png/v1769163201/83bb4ba60a9e2e1185a0c2a6350f412f_loqthj.jpg"
+  },
+  "Girls Love": {
+    "mal_id": 26,
+    "bg": "bg-[#2b0f18]",
+    "bg-2": "before:bg-[#fda4af]",
+    "text": "text-[#fda4af]",
+    "character": "Yuu Kashima",
+    "character_url": null
+  },
+  "Gourmet": {
+    "mal_id": 47,
+    "bg": "bg-[#2b1a0f]",
+    "bg-2": "before:bg-[#fdba74]",
+    "text": "text-[#fdba74]",
+    "character": "Soma Yukihira",
+    "character_url": null
+  },
+  "Horror": {
+    "mal_id": 14,
+    "bg": "bg-[#0b0b0b]",
+    "bg-2": "before:bg-[#f87171]",
+    "text": "text-[#f87171]",
+    "character": "Ken Kaneki",
+    "character_url": null
+  },
+  "Mystery": {
+    "mal_id": 7,
+    "bg": "bg-[#0f172a]",
+    "bg-2": "before:bg-[#93c5fd]",
+    "text": "text-[#93c5fd]",
+    "character": "L Lawliet",
+    "character_url": null
+  },
+  "Romance": {
+    "mal_id": 22,
+    "bg": "bg-[#2b0f15]",
+    "bg-2": "before:bg-[#f472b6]",
+    "text": "text-[#f472b6]",
+    "character": "Taiga Aisaka",
+    "character_url": null
+  },
+  "Sci-Fi": {
+    "mal_id": 24,
+    "bg": "bg-[#0f1f2b]",
+    "bg-2": "before:bg-[#38bdf8]",
+    "text": "text-[#38bdf8]",
+    "character": "Makise Kurisu",
+    "character_url": null
+  },
+  "Slice of Life": {
+    "mal_id": 36,
+    "bg": "bg-[#1f2b0f]",
+    "bg-2": "before:bg-[#a3e635]",
+    "text": "text-[#a3e635]",
+    "character": "Houtarou Oreki",
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/v1769249145/Slice_of_life_xrxjqb.png"
+  },
+  "Sports": {
+    "mal_id": 30,
+    "bg": "bg-[#0f2b16]",
+    "bg-2": "before:bg-[#4ade80]",
+    "text": "text-[#4ade80]",
+    "character": "Hinata Shoyo",
+    "character_url": null
+  },
+  "Supernatural": {
+    "mal_id": 37,
+    "bg": "bg-[#1b0f2b]",
+    "bg-2": "before:bg-[#c084fc]",
+    "text": "text-[#c084fc]",
+    "character": "Mob",
+    "character_url": null
+  },
+  "Suspense": {
+    "mal_id": 41,
+    "bg": "bg-[#111827]",
+    "bg-2": "before:bg-[#A9BFEA]",
+    "text": "text-[#A9BFEA]",
+    "character": "Johan Liebert",
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/e_background_removal,f_png/v1769163392/images_a8sxrj.jpg"
+  },
+
+  "Ecchi": { 
+    "mal_id": 9, 
+    "bg": "bg-[#2b0f12]", 
+    "bg-2": "before:bg-[#fb7185]", 
+    "text": "text-[#fb7185]", 
+    "character": "Rias Gremory", 
+    "character_url": null },
+  "Erotica": { 
+    "mal_id": 49, 
+    "bg": "bg-[#2b0a12]", 
+    "bg-2": "before:bg-[#f43f5e]", 
+    "text": "text-[#f43f5e]", 
+    "character": "Maki Honoka", 
+    "character_url": null },
+  "Hentai": { 
+    "mal_id": 12, 
+    "bg": "bg-[#1a0005]", 
+    "bg-2": "before:bg-[#ff4d6d]", 
+    "text": "text-[#ff4d6d]", 
+    "character": "Nozomi", 
+    "character_url": null },
+
+  "Adult Cast": { 
+    "mal_id": 50, 
+    "bg": "bg-[#1c1c1c]", 
+    "bg-2": "before:bg-[#d4d4d8]", 
+    "text": "text-[#d4d4d8]", 
+    "character": "Nanami Kento", 
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/e_background_removal,f_png/v1769245371/9bac76ab72a8f8b63d782b59509ccba3_lqkqio.jpg" 
+    },
+  "Anthropomorphic": { 
+    "mal_id": 51, 
+    "bg": "bg-[#1f2b1f]", 
+    "bg-2": "before:bg-[#86efac]", 
+    "text": "text-[#86efac]", 
+    "character": "Legoshi", 
+    "character_url": null 
+  },
+  "CGDCT": { 
+    "mal_id": 52, 
+    "bg": "bg-[#2b1f2b]", 
+    "bg-2": "before:bg-[#f0abfc]", 
+    "text": "text-[#f0abfc]", 
+    "character": "Yui Hirasawa", 
+    "character_url": null 
+  },
+  "Childcare": { 
+    "mal_id": 53, 
+    "bg": "bg-[#1f2b2b]", 
+    "bg-2": "before:bg-[#67e8f9]", 
+    "text": "text-[#67e8f9]", 
+    "character": "Kotaro Sato", 
+    "character_url": null 
+  },
+  "Combat Sports": { 
+    "mal_id": 54, 
+    "bg": "bg-[#2b0f0f]", 
+    "bg-2": "before:bg-[#f87171]", 
+    "text": "text-[#f87171]", 
+    "character": "Ippo Makunouchi", 
+    "character_url": null 
+  },
+  "Crossdressing": { 
+    "mal_id": 81, 
+    "bg": "bg-[#2b0f22]", 
+    "bg-2": "before:bg-[#e879f9]", 
+    "text": "text-[#e879f9]", 
+    "character": "Hideyoshi Kinoshita", 
+    "character_url": null 
+  },
+  "Delinquents": { 
+    "mal_id": 55, 
+    "bg": "bg-[#1a0f0f]", 
+    "bg-2": "before:bg-[#fca5a5]", 
+    "text": "text-[#fca5a5]", 
+    "character": "Takemichi Hanagaki", 
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/e_background_removal,f_png,q_auto:best/v1769245481/images_y5liyp.jpg" 
+    },
+  "Detective": { 
+    "mal_id": 39, 
+    "bg": "bg-[#0f172a]", 
+    "bg-2": "before:bg-[#c7d2fe]", 
+    "text": "text-[#c7d2fe]", 
+    "character": "Conan Edogawa", 
+    "character_url": null 
+  },
+  "Educational": { 
+    "mal_id": 56, 
+    "bg": "bg-[#0f2b24]", 
+    "bg-2": "before:bg-[#5eead4]", 
+    "text": "text-[#5eead4]", 
+    "character": "Cells at Work Platelet", 
+    "character_url": null 
+  },
+  "Gag Humor": { 
+    "mal_id": 57, 
+    "bg": "bg-[#2b2b0f]", 
+    "bg-2": "before:bg-[#fde047]", 
+    "text": "text-[#fde047]", 
+    "character": "Osomatsu", 
+    "character_url": null 
+  },
+  "Gore": { 
+    "mal_id": 58, 
+    "bg": "bg-[#0b0000]", 
+    "bg-2": "before:bg-[#dc2626]", 
+    "text": "text-[#dc2626]", 
+    "character": "Alucard", 
+    "character_url": null 
+  },
+  "Harem": { 
+    "mal_id": 35, 
+    "bg": "bg-[#2b0f1f]", 
+    "bg-2": "before:bg-[#f9a8d4]", 
+    "text": "text-[#f9a8d4]", 
+    "character": "Issei Hyoudou", 
+    "character_url": null 
+  },
+  "High Stakes Game": { 
+    "mal_id": 59, 
+    "bg": "bg-[#0f1a2b]", 
+    "bg-2": "before:bg-[#60a5fa]", 
+    "text": "text-[#60a5fa]", 
+    "character": "Yumeko Jabami", 
+    "character_url": null 
+  },
+  "Historical": { 
+    "mal_id": 13, 
+    "bg": "bg-[#2b1f0f]", 
+    "bg-2": "before:bg-[#eab308]", 
+    "text": "text-[#eab308]", 
+    "character": "Thorfinn", 
+    "character_url": null 
+  },
+
+  "Josei": { 
+    "mal_id": 43, 
+    "bg": "bg-[#2b0f1a]", 
+    "bg-2": "before:bg-[#fbcfe8]", 
+    "text": "text-[#fbcfe8]", 
+    "character": "Nana Osaki", 
+    "character_url": null 
+  },
+  "Kids": { 
+    "mal_id": 15, 
+    "bg": "bg-[#1f2b2b]", 
+    "bg-2": "before:bg-[#67e8f9]", 
+    "text": "text-[#67e8f9]", 
+    "character": "Doraemon", 
+    "character_url": null 
+  },
+  "Seinen": { 
+    "mal_id": 42, 
+    "bg": "bg-[#111827]", 
+    "bg-2": "before:bg-[#e5e7eb]", 
+    "text": "text-[#e5e7eb]", 
+    "character": "Guts", 
+    "character_url": null 
+  },
+  "Shoujo": { 
+    "mal_id": 25, 
+    "bg": "bg-[#2b0f18]", 
+    "bg-2": "before:bg-[#f9a8d4]", 
+    "text": "text-[#f9a8d4]", 
+    "character": "Usagi Tsukino", 
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/v1769247395/Usagi_Tsukino_Render_01_f0p9zn.webp" 
+     },
+  "Shounen": { 
+    "mal_id": 27, 
+    "bg": "bg-[#0f1a2b]", 
+    "bg-2": "before:bg-[#60a5fa]", 
+    "text": "text-[#60a5fa]", 
+    "character": "Izuku Midoriya", 
+    "character_url": "https://res.cloudinary.com/dkfddgsc0/image/upload/v1769247281/Izuku_Midoriya_Costume_Epsilon_V2__28Anime_29_fli3dj.webp" 
+     }
+}

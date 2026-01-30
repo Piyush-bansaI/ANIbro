@@ -1,0 +1,18 @@
+[
+    {
+        "question": "What is ANibro?",
+        "answer": "ANIbro is a which helps you to make anime list which is suggested but your bro 😎 you can get almost anime here and you can make list without any restriction"
+    },
+    {
+        "question": "Is ANibro free?",
+        "answer": "Absolutely, ANIbro is an open-source website in which you can make list for free without any restriction because it is made by your own bro"
+    },
+    {
+        "question": "Is ANibro safe?",
+        "answer": "Yes, it is safe and it is open-source you don't have to worry of anything just make list and enjoy my website"
+    },
+    {
+        "question": "So, Why am I asking if you are an adult or not?",
+        "answer": "Well the answer is that the API url I use also contains some adult content and genres which is not good for a kid so that is why I am asking the question, if you toggle the checkbox then you can also see the adult content else it will be normal content, now I know that some smart kid will still tick the adult button so if you ticked, then you cannot disable is rn but in future I maybe add the disable button as well maybe"
+    }
+]

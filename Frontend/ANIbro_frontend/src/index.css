@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+body::-webkit-scrollbar-track {
+    color: #1b1b1b;
+}
+
+.no-scroll::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+@layer utilities { /*all custom styles*/
+    .bg-color {
+        @apply bg-gray-900
+    }
+    .hover\:bg-color {
+        @apply hover:bg-white/10
+    }
+    .hover\:accent-bg-color {
+        @apply hover:bg-amber-400/7 transition-colors
+    }
+    .text-color {
+        @apply text-gray-100
+    }
+    .accent-color {
+        @apply text-amber-400
+    }
+    .hover\:accent-color {
+        @apply hover:text-amber-400
+    }
+    .accent-bg-color {
+        @apply bg-amber-400
+    }
+    .accent-bg-color\/80 {
+        @apply bg-amber-400/80
+    }
+    .accent-bg-color\/50 {
+        @apply bg-amber-400/50
+    }
+    .accent-bg-color\/10 {
+        @apply bg-amber-400/10
+    }
+    .accent-bg-color\/5 {
+        @apply bg-amber-400/5
+    }
+    .btn{
+        @apply bg-amber-400 hover:bg-amber-500 transition-colors cursor-pointer
+    }
+    .loading-component{
+        @apply bg-white/30 animate-pulse
+    }
+}
+
+.animate-loading{
+    rotate: -50deg;
+    position: absolute;
+    animation: loading 1s infinite ease-in-out;
+    height: 1100px
+}  
+
+@keyframes loading {
+    0% {
+        top: -200px;
+        left: -200%;
+    }
+    100% {
+        top: -300px;
+        left: 200%;
+    }
+}
+
+.writing-vertical {
+    writing-mode: vertical-lr;
+    text-orientation:sideways;
+}
+
+body{
+    background-color: #1b1b1b;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+.dynamic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+}
+
+.animate-appear {
+    animation: appear 100ms ease-in-out;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-disappear {
+    animation: appear 100ms ease-in-out;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.side-appear {
+    animation: side-appear 300ms ease-out forwards;
+}
+
+@keyframes side-appear {
+    0% {
+        transform: translateX(100%);
+    } 
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.side-disappear {
+    animation: side-disappear 300ms ease-in forwards;
+}
+
+@keyframes side-disappear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    } 
+}
+
+.animate-shrink {
+    animation: shrink 5s ease-in-out forwards;
+}
+
+@keyframes shrink {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(145, 121, 43, 0.803);
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(102, 85, 30, 0.803);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(85, 71, 26, 0.803);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(61, 51, 14);
+}
+
+@media (max-width: 1000px) {
+    .remove-on-small-screen{
+        display: none;
+    }
+    .w-full-on-small {
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .input-width {
+        width: 250px;
+    }
+}

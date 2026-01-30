@@ -1,0 +1,30 @@
+const express = require('express');
+const morgan = require('morgan');
+const env = require("dotenv")
+env.config()
+const cors = require("cors")
+const cookie = require('cookie-parser');
+const ANIbroDB = require('./config/db');
+ANIbroDB()
+const authRouter = require("./routes/bro.routes")
+const broRouter = require('./routes/broLogin.routes');
+
+const app = express()
+const port = process.env.PORT || 3000
+
+app.use(cookie())
+app.use(express.json())
+app.use(morgan("dev"))
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    credentials: true
+}))
+const recommendRouter = require('./routes/AI.routes');
+
+app.use("/auth", authRouter)
+app.use("/user", broRouter)
+app.use("/ai", recommendRouter)
+
+app.listen(port, () => {
+    console.log("the backend is running at port", port)
+})
