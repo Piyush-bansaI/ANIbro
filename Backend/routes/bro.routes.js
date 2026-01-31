@@ -1,6 +1,6 @@
 const express = require('express')
 const ANIbroModel = require("../models/bros")
-const {body, validationResult, cookie} = require('express-validator');
+const {body, validationResult} = require('express-validator');
 const bcrypt = require('bcrypt')
 const emailVerify = require("../utils/sendMail")
 const crypto = require('crypto');
@@ -28,14 +28,11 @@ router.post("/signup",
     async (req, res) => {
 
     const err = validationResult(req)
-    if (!err.isEmpty()) return res.status(400).json({
-        message: 'input is not valid'
-    })
     if (err.isEmpty()) {
         const {username, email, password, isAdult} = req.body
 
         const existingMember = await ANIbroModel.findOne({
-            username
+            $or: [{username}, {email}]
         })
 
         if (existingMember) return res.status(400).json({message: "Username already exists"})
