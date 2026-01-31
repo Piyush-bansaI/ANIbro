@@ -170,7 +170,7 @@ const SignUpContext = ({children}) => {
         }
     }
   return (
-    <SignUp.Provider value={{username, setUsername, email, setEmail, password, setPassword, signUp, message, passwordStrength, getToken, usernameAvilable, dataSender, isLoggedIn, setIsLoggedIn, getToken}}>
+    <SignUp.Provider value={{username, setUsername, email, setEmail, password, setPassword, signUp, message, passwordStrength, getToken, usernameAvilable, dataSender, isLoggedIn, setIsLoggedIn}}>
         {children}
     </SignUp.Provider>
   )
