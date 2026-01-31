@@ -1,6 +1,4 @@
 import React from 'react'
-import franky from '../../assets/images/Franky_the_form_dude.webp'
-
 const Franky = () => {
   return (
     <div className='relative top-5 left-10'>
