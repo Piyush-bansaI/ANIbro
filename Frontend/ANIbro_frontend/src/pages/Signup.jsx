@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { navContext } from '../Contexts/NavbarContext'
-import SignUp_pic from '../assets/Images/One_Piece_transparent.png'
-import SignUp_bg from '../assets/Images/One_Piece_extended.jpg'
+import SignUp_pic from '../assets/images/one_piece_transparent.png'
+import SignUp_bg from '../assets/images/one_piece_extended.jpg'
 import CoolMessage from '../Components/Decoration/CoolMessage'
 import SignUpComponent from '../Components/SignUp/SignUpComponent'
 

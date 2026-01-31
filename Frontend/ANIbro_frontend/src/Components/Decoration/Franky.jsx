@@ -1,5 +1,5 @@
 import React from 'react'
-import franky from '../../assets/Images/Franky_the_form_dude.webp'
+import franky from '../../assets/images/Franky_the_form_dude.webp'
 
 const Franky = () => {
   return (

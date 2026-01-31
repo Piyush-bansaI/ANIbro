@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import Button from '../Components/buttons/Button'
 import { navContext } from '../Contexts/NavbarContext'
-import Pikachu from '../assets/Images/Pikachu.png'
+import Pikachu from '../assets/images/Pikachu.png'
 
 const NetworkError = ({setAnimeError, setMangaError}) => {
   const [, setRemoveNav] = useContext(navContext)
