@@ -13,8 +13,8 @@ const VerifyEmail = () => {
         Note that the verification will expire in <span className='accent-color font-bold'>15 Minutes</span>
       </div>
         </div>
-        <img src={naruto} className='absolute bottom-0 lg:w-[30vw] w-80 rotate-y-180 right-5 z-2 brightness-0 opacity-12 selection:bg-transparent' alt="naruto" />
-        <img src={naruto} className='absolute bottom-0 lg:w-[30vw] w-80 rotate-y-180 right-0 z-2 selection:bg-transparent' alt="naruto" />
+        <img src='https://res.cloudinary.com/dkfddgsc0/image/upload/v1769861982/naruto_mail_sender_qqybwz.png' className='absolute bottom-0 lg:w-[30vw] w-80 rotate-y-180 right-5 z-2 brightness-0 opacity-12 selection:bg-transparent' alt="naruto" />
+        <img src='https://res.cloudinary.com/dkfddgsc0/image/upload/v1769861982/naruto_mail_sender_qqybwz.png' className='absolute bottom-0 lg:w-[30vw] w-80 rotate-y-180 right-0 z-2 selection:bg-transparent' alt="naruto" />
       <div className='lg:h-[35vw] lg:w-[35vw] h-110 w-110 accent-bg-color absolute -bottom-30 -right-30 rounded-full'></div>
     </div>
   )
