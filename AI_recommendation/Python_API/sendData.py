@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import sys
 import os
 
@@ -8,6 +9,7 @@ from AnimeRecommender import animeRecommender
 from MangaRecommender import mangaRecommender
 
 app = Flask(__name__)
+CORS(app)
 
 @app.get('/')
 def Running():
