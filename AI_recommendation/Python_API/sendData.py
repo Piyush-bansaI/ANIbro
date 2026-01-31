@@ -11,7 +11,7 @@ from AnimeRecommender import animeRecommender
 from MangaRecommender import mangaRecommender
 
 app = Flask(__name__)
-CORS(app, origins=[os.environ.get("BACKEND_URL"), "http://localhost:3000/"]) # type: ignore
+CORS(app)
 
 @app.get('/')
 def Running():
