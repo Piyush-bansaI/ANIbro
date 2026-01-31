@@ -1,7 +1,5 @@
 flask
 flask-cors
-sys
-os
 numpy
 pandas
 scikit-learn
