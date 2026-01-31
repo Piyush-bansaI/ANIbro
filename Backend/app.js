@@ -16,7 +16,7 @@ app.use(cookie())
 app.use(express.json())
 app.use(morgan("dev"))
 app.use(cors({
-    origin: 'https://anibro-lzcx9hdah-piyush-bansais-projects.vercel.app',
+    origin: ['http://localhost:5173', 'https://anibro-lzcx9hdah-piyush-bansais-projects.vercel.app'],
     credentials: true
 }))
 const recommendRouter = require('./routes/AI.routes');
