@@ -10,7 +10,7 @@ export const typeContext = createContext()
       let jiken = axios.create({
         baseURL: "https://api.jikan.moe/v4"});
       let backend_URL = axios.create({
-        baseURL: "http://localhost:3000",
+        baseURL: "https://anibro.onrender.com",
         withCredentials: true
       });
       // 18+ things
