@@ -1,9 +1,9 @@
 const nodemailer = require('nodemailer');
 
 const defineMail = nodemailer.createTransport({
-    service: 'gmail',
+    host: process.env.SMTP_Host,
     secure: true,
-    port: 465,
+    port: process.env.SMTP_port,
     auth: {
         user: process.env.ANIbro_mail,
         pass: process.env.ANIbro_pass
