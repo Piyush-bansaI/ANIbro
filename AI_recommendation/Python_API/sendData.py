@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
@@ -9,7 +11,7 @@ from AnimeRecommender import animeRecommender
 from MangaRecommender import mangaRecommender
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[os.environ.get("BACKEND_URL"), "http://localhost:3000/"]) # type: ignore
 
 @app.get('/')
 def Running():
@@ -57,4 +59,5 @@ def recommendManga():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True, port=3001)
+    debug = os.environ.get("NODE_ENV") != 'production'
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)), debug=debug)
