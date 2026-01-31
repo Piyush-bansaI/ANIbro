@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import error from '../assets/Images/Naruto.png'
+import error from '../assets/images/Naruto.png'
 import { useNavigate } from 'react-router-dom';
 import Button from '../Components/buttons/Button';
 
