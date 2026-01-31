@@ -1,5 +1,5 @@
 import React from 'react'
-import Qna from '../Components/qna'
+import Qna from '../Components/Qna'
 import qna from '../json/qna.json'
 
 const WhyAmIAsking = () => {
