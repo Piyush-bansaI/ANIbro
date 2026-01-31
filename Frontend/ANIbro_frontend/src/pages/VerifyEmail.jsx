@@ -1,5 +1,4 @@
 import React from 'react'
-import naruto from '../assets/images/naruto_mail_sender.png'
 
 const VerifyEmail = () => {
   return (
