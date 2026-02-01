@@ -9,11 +9,11 @@ const sendEmail = async (token, username, email) => {
     
     const sendUrl = `http://localhost:5173/verify/${token}`;
     const finalBody = body.replace("{{link}}", sendUrl)
-        
+    const mail = process.env.NODE_ENV === "production" ?process.env.ANIbro_USER : process.env.ANIbro_mail
     try {
         
         await defineMail.sendMail({
-            from: `"ANIbro" <${process.env.ANIbro_mail}>`,
+            from: `"ANIbro" <${mail}>`,
             to: email,
             subject: `ANIbro verification Link`,
             html: finalBody
