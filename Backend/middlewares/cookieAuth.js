@@ -2,7 +2,10 @@ const jwt = require('jsonwebtoken');
 
 const authMiddleware = (req, res, next) => {
     const token = req.cookies?.token;
-    if (!token) return res.status(200).json({message: 'user not logged in'})
+    if (!token) {
+        req.bro = null;
+        return next(); 
+    }
 
     try {
         
