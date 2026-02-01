@@ -26,9 +26,9 @@ const ProfilePicContext = ({children}) => {
       if (!brosData) return
 
       const getData = async () => {
+        console.log("entered")
         try {
           const data = await backend_URL.get('/user/get-data')
-          console.log("entered")
           console.log(data)
           if (data.data.message === 'Data Incoming!') {
               const datasData = data?.data?.data
