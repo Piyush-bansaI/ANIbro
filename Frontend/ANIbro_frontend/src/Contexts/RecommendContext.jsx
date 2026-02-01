@@ -38,7 +38,7 @@ const RecommendContext = ({children}) => {
         const getRecommendedManga = async () => {
             try {
                 const getManga = await backend_URL.post('/ai/manga-recommender')
-                if (getAnime.data.message === 'user didn\'t gave any fav genre') return
+                if (getManga.data.message === 'user didn\'t gave any fav genre') return
                 const filteredManga = getManga.data.genre?.filter(elem => !elem.genres.some(g => g.name === 'Hentai'))
                 setRecommendedManga(filteredManga || [])
                 (filteredManga && sessionStorage.setItem('recommended-manga', JSON.stringify(filteredManga)))
