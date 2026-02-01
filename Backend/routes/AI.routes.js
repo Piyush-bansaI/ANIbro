@@ -30,7 +30,7 @@ router.post("/anime-recommender", async (req, res) => {
             genre: getANIRecomendation.data.genre
         })
     } catch (error) {
-        res.status(400).json({
+        return res.status(400).json({
             message: error.response
         })
     }
@@ -57,7 +57,7 @@ router.post("/manga-recommender", async (req, res) => {
             'genre': getMANRecomendation.data.genre
         })
     } catch (error) {
-        res.status(400).json({message: error.response})
+        return res.status(400).json({message: error.response})
     }
 })
 
