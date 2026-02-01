@@ -1,1 +1,1 @@
-web: gunicorn --chdir . Python_API.sendData:app
+web: gunicorn --chdir . Python_API.sendData:app --workers 1 --timeout 180

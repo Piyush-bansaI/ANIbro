@@ -1,22 +1,36 @@
-from queue import Full
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 import json
 
-rawMangaData = pd.read_json('./Data/MangaData.json')
-mangaData = pd.read_csv('./Processed_Data/Manga.csv')
+rawMangaDf = None
+MangaDf = None
+cols = None
+KNN = None
 
-rawMangaDf = pd.DataFrame(rawMangaData).set_index('id')
-MangaDf = pd.DataFrame(mangaData).set_index('id')
+def loadMangaData():
+    global rawMangaDf, MangaDf, cols, KNN
 
-cols = MangaDf.columns
+    if KNN is not None:
+        return
 
-KNN = NearestNeighbors(n_neighbors=100)
-KNN.fit(MangaDf)
+    try:
+        rawMangaData = pd.read_json('./Data/MangaData.json')
+        mangaData = pd.read_csv('./Processed_Data/Manga.csv')
+
+        rawMangaDf = pd.DataFrame(rawMangaData).set_index('id')
+        MangaDf = pd.DataFrame(mangaData).set_index('id')
+
+        cols = MangaDf.columns
+
+        KNN = NearestNeighbors(n_neighbors=100)
+        KNN.fit(MangaDf)
+    except Exception as e:
+        print(e)
 
 def mangaRecommender(user_genres):
+    loadMangaData()
 
-    userVector = pd.Series(0, index=MangaDf.columns)
+    userVector = pd.Series(0, index=MangaDf.columns) # type: ignore
 
     userVector['real_genres'] = 1
 
@@ -26,9 +40,9 @@ def mangaRecommender(user_genres):
 
     userVector = userVector.values.reshape(1, -1) #type: ignore
 
-    dist, idx = KNN.kneighbors(userVector)
+    dist, idx = KNN.kneighbors(userVector) # type: ignore
 
-    recommended_manga = rawMangaDf.iloc[idx[0]].reset_index()
+    recommended_manga = rawMangaDf.iloc[idx[0]].reset_index() # type: ignore
 
     recommended_manga = recommended_manga[recommended_manga['score'] >= 5]
 
