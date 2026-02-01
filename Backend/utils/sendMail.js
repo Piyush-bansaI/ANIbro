@@ -1,25 +1,51 @@
 const fs = require('fs');
 const path = require('path');
-const defineMail = require('./createMail')
+const defineMail = require('./createMail');
+const { default: axios } = require('axios');
 
 const sendEmail = async (token, username, email) => {
     const body = fs.readFileSync(
         path.join(__dirname, "./mailBody/index.html"),'utf-8'
     )
     
-    const sendUrl = `http://localhost:5173/verify/${token}`;
-    const finalBody = body.replace("{{link}}", sendUrl)
-    const mail = process.env.NODE_ENV === "production" ?process.env.ANIbro_USER : process.env.ANIbro_mail
+    const sendUrl = `${process.env.frontend_url}/verify/${token}`;
+    const finalBody = body.replace("{{link}}", sendUrl) 
     try {
-        
-        await defineMail.sendMail({
-            from: `"ANIbro" <${mail}>`,
-            to: email,
-            subject: `ANIbro verification Link`,
-            html: finalBody
-        })
+        console.log("\x1b[93mSending Mail\x1b[0m")
+        if (process.env.NODE_ENV === 'production') {
+            await axios.post(
+                "https://api.brevo.com/v3/smtp/email",
+                {
+                    sender: {
+                        name: 'ANIbro',
+                        email: process.env.ANIbro_mail
+                    },
+                    to: [{
+                        email: email,
+                        username: username
+                    }],
+                    subject: `ANIbro verification Link`,
+                    htmlContent: finalBody
+                },
+                {
+                    headers: {
+                        'api-key': process.env.BREVO_API,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            console.log("\x1b[92msent mail using Brevo\x1b[0m")
+        } else {
+            console.log("x1b[95msending mail using smtpx1b[0m")
+            await defineMail.sendMail({
+                from: `"ANIbro" <${process.env.ANIbro_mail}>`,
+                to: email,
+                subject: `ANIbro verification Link`,
+                html: finalBody
+            })
+        }
     } catch (error) {
-        console.log("err: ", error)
+        console.log("err: ",error?.response || error)
     }
 }
 
