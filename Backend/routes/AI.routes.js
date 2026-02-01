@@ -18,7 +18,7 @@ router.post("/anime-recommender", async (req, res) => {
 
     const userGenres = getUser.genres
     
-    if (userGenres.length === 0) return res.status(200).json({
+    if (userGenres?.length === 0) return res.status(200).json({
         message: 'user didn\'t gave any fav genre'
     })
 
@@ -44,6 +44,10 @@ router.post("/manga-recommender", async (req, res) => {
     exists(getUser, res)
 
     const userGenres = getUser.genres
+
+    if (userGenres?.length === 0) return res.status(200).json({
+        message: 'user didn\'t gave any fav genre'
+    })
 
     try {
         const getMANRecomendation = await AI.post('/recommend-manga', {

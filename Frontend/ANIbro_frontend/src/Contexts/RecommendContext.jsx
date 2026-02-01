@@ -27,6 +27,7 @@ const RecommendContext = ({children}) => {
         const getRecommendedAnime = async () => {
             try {
                 const getAnime = await backend_URL.post('/ai/anime-recommender')
+                if (getAnime.data.message === 'user didn\'t gave any fav genre') return
                 const filteredAnime = getAnime.data.genre?.filter(elem => !elem.genres.some(g => g.name === 'Hentai'))
                 setRecommendedAnime(filteredAnime || [])
                 (filteredAnime && sessionStorage.setItem('recommended-anime', JSON.stringify(filteredAnime)))
@@ -37,6 +38,7 @@ const RecommendContext = ({children}) => {
         const getRecommendedManga = async () => {
             try {
                 const getManga = await backend_URL.post('/ai/manga-recommender')
+                if (getAnime.data.message === 'user didn\'t gave any fav genre') return
                 const filteredManga = getManga.data.genre?.filter(elem => !elem.genres.some(g => g.name === 'Hentai'))
                 setRecommendedManga(filteredManga || [])
                 (filteredManga && sessionStorage.setItem('recommended-manga', JSON.stringify(filteredManga)))
