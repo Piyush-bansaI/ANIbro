@@ -32,12 +32,12 @@ def Running():
 @app.post('/recommend-anime')
 def recommendAnime():
     ANIbro_data = request.get_json(silent=True)
-
     if not ANIbro_data:
         return jsonify({
             'message': 'didn\'t got the genre'
         }), 400
 
+    print("in the anime recommender")
     Anime_genres = ANIbro_data.get('genres', [])
 
     if len(Anime_genres) == 0: 
@@ -61,6 +61,7 @@ def recommendManga():
             'message': 'didn\'t got the genre'
         }), 400
 
+    print("in the manga recommender")
     Manga_genres = ANIbro_data.get('genres', [])
 
     if len(Manga_genres) == 0:
