@@ -1,10 +1,7 @@
 const nodemailer = require('nodemailer');
 
-let transporter;
-
 if (process.env.NODE_ENV !== "production") {
-const defineMail = () => {
-    transporter = nodemailer.createTransport({
+const defineMail = nodemailer.createTransport({
       service: "gmail",
       secure: true,
       port: 465,                         
@@ -13,6 +10,8 @@ const defineMail = () => {
         pass: process.env.ANIbro_pass,      
       },
     });
-  }
+  
   module.exports = defineMail
+} else {
+  return console.log("back")
 }
