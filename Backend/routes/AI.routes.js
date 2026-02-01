@@ -18,14 +18,14 @@ router.post("/anime-recommender", async (req, res) => {
 
     const userGenres = getUser.genres
     
+    if (userGenres.length === 0) return res.status(200).json({
+        message: 'user didn\'t gave any fav genre'
+    })
 
     try {
         const getANIRecomendation = await AI.post('/recommend-anime', {
             genres: userGenres
         })
-
-        
-
         return res.status(200).json({
             genre: getANIRecomendation.data.genre
         })
