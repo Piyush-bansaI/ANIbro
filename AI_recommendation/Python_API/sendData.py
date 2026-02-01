@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 import sys
+import threading
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
@@ -12,13 +13,18 @@ from AnimeRecommender import animeRecommender, loadAnimeData
 from MangaRecommender import mangaRecommender, loadMangaData
 
 def loadUp():
-    print("\033[93mLoading Resources 📃\033[0m")
-    loadAnimeData()
-    loadMangaData()
-    print("\033[92mLoading Complete 💪\033[0m")
+    try:
+        print("\033[93mLoading Resources 📃\033[0m")
+        loadAnimeData()
+        loadMangaData()
+        print("\033[92mLoading Complete 💪\033[0m")
+    except Exception as e:
+        print("\033[91mERROR! 💥\033[0m", e)
 
 app = Flask(__name__)
 CORS(app)
+
+threading.Thread(target=loadUp, daemon=True).start()
 
 @app.errorhandler(Exception)
 def AIError(e):
