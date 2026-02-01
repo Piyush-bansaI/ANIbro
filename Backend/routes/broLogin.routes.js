@@ -93,7 +93,7 @@ router.get('/get-data', async (req, res) => {
     console.log("/x1b[91mgiving data/x1b[0m")
     const findUser = await ANIbroModel.findById(id)
 
-    if (!userExists(findUser, res)) return
+    if (!userExists(findUser, res))  {console.log('\x1b[91mUser not found\x1b[0m'); return}
 
     const brosGenres = findUser?.genres;
     const aniList = findUser?.animeList;
