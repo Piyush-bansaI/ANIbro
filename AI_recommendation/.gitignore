@@ -1,1 +1,5 @@
 .env
+anime_datas/
+.vscode/
+__pycache__/
+Preprocessing.py
