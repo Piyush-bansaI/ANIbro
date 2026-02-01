@@ -48,9 +48,10 @@ router.get('/userData', (req, res) => {
 })
 
 router.post('/save-profile', async (req, res) => {
+    const { id } = req.bro
     const {newImg} = req.body;
 
-    const broData = await ANIbroModel.findById(req.bro.id)
+    const broData = await ANIbroModel.findById(id)
 
     if (!userExists(broData, res)) return
 
@@ -101,7 +102,7 @@ router.get('/get-data', async (req, res) => {
     if (!brosGenres) return res.status(200).json({
         message: 'none'
     })
-
+    console.log("\x1b[92mdata given\x1b[0m")
     return res.status(200).json({
         message: 'Data Incoming!',
         data: {
