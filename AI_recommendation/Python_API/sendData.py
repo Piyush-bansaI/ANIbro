@@ -8,9 +8,14 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from dotenv import load_dotenv
 load_dotenv()
 
-from AnimeRecommender import animeRecommender
-from MangaRecommender import mangaRecommender
+from AnimeRecommender import animeRecommender, loadAnimeData
+from MangaRecommender import mangaRecommender, loadMangaData
 
+def loadUp():
+    print("\033[93mLoading Resources 📃\033[0m")
+    loadAnimeData()
+    loadMangaData()
+    print("\033[92mLoading Complete 💪\033[0m")
 
 app = Flask(__name__)
 CORS(app)

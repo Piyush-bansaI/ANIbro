@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 import json
+import os
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
 rawMangaDf = None
 MangaDf = None
@@ -13,19 +16,18 @@ def loadMangaData():
     if KNN is not None:
         return
 
-    try:
-        rawMangaData = pd.read_json('./Data/MangaData.json')
-        mangaData = pd.read_csv('./Processed_Data/Manga.csv')
+    
+    rawMangaData = pd.read_json(os.path.join(base_dir, "Data", "MangaData.json"))
+    mangaData = pd.read_csv(os.path.join(base_dir, "Processed_Data", "Manga.csv"))
 
-        rawMangaDf = pd.DataFrame(rawMangaData).set_index('id')
-        MangaDf = pd.DataFrame(mangaData).set_index('id')
+    rawMangaDf = pd.DataFrame(rawMangaData).set_index('id')
+    MangaDf = pd.DataFrame(mangaData).set_index('id')
 
-        cols = MangaDf.columns
+    cols = MangaDf.columns
 
-        KNN = NearestNeighbors(n_neighbors=100)
-        KNN.fit(MangaDf)
-    except Exception as e:
-        print(e)
+    KNN = NearestNeighbors(n_neighbors=100)
+    KNN.fit(MangaDf)
+    
 
 def mangaRecommender(user_genres):
     loadMangaData()

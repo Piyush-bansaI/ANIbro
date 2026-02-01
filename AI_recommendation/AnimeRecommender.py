@@ -1,6 +1,9 @@
 import pandas as pd
 import json
 from sklearn.neighbors import NearestNeighbors
+import os
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 
 RawAniDf = None
 AniDf = None
@@ -12,25 +15,23 @@ def loadAnimeData():
     
     if KNN is not None:
         return
-    try:
-        print("\033[92mLoading Goods\033[0m")
+    print("\033[92mLoading Goods\033[0m")
 
-        raw_anime_data = pd.read_json('./Data/AnimeData.json')
+    raw_anime_data = pd.read_json(os.path.join(base_dir, 'Data', 'AnimeData.json'))
 
-        RawAniDf = pd.DataFrame(raw_anime_data).set_index('id')
+    RawAniDf = pd.DataFrame(raw_anime_data).set_index('id')
 
-        AnimeData = pd.read_csv("./Processed_Data/Anime.csv", index_col=['id'])
+    AnimeData = pd.read_csv(os.path.join(base_dir, 'Processed_Data', 'Anime.csv'), index_col=['id'])
 
-        AniDf = pd.DataFrame(AnimeData)
+    AniDf = pd.DataFrame(AnimeData)
 
 
-        cols = AniDf.columns
+    cols = AniDf.columns
 
-        KNN = NearestNeighbors(n_neighbors=3000)
+    KNN = NearestNeighbors(n_neighbors=3000)
 
-        KNN.fit(AniDf)
-    except Exception as e:
-        print(e)
+    KNN.fit(AniDf)
+    
 
 def animeRecommender(user_genres: list): # function
     loadAnimeData()
