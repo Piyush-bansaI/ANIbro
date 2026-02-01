@@ -29,10 +29,10 @@ const ProfilePicContext = ({children}) => {
         try {
           const data = await backend_URL.get('/user/get-data')
           if (data.data.message === 'Data Incoming!') {
-              const datasData = data.data.data
-              setBrosGenres(datasData.brosGenres)
-              setAnimeLst(datasData.aniList)
-              setMangaLst(datasData.manList)
+              const datasData = data?.data?.data
+              setBrosGenres(datasData?.brosGenres)
+              setAnimeLst(datasData?.aniList)
+              setMangaLst(datasData?.manList)
           }
         } catch (error) {
           console.log(error)
