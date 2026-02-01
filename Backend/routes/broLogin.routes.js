@@ -42,6 +42,7 @@ router.get('/get-relations', async (req, res) => {
 router.use(authMiddleware)
 
 router.get('/userData', (req, res) => {
+    console.log(req.bro)
     return res.json({
         broData: req.bro
     })
@@ -90,10 +91,10 @@ router.post('/store-genre', async (req, res) => {
 
 router.get('/get-data', async (req, res) => {
     const {id} = req.bro;
-    console.log("/x1b[91mgiving data/x1b[0m")
+    console.log("\x1b[91mgiving data\x1b[0m")
     const findUser = await ANIbroModel.findById(id)
 
-    if (!userExists(findUser, res))  {console.log('\x1b[91mUser not found\x1b[0m'); return}
+    if (!userExists(findUser, res)) {console.log('\x1b[91mUser not found\x1b[0m'); return}
 
     const brosGenres = findUser?.genres;
     const aniList = findUser?.animeList;
