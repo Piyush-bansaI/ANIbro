@@ -22,8 +22,8 @@ const ProfilePicContext = ({children}) => {
         return 'Profile'
       }
     })
+    console.log(brosData) // remove this 
     useEffect(() => {
-      console.log(brosData)
       if (!brosData) return
 
       const getData = async () => {
