@@ -90,22 +90,22 @@ router.post('/store-genre', async (req, res) => {
 
 router.get('/get-data', async (req, res) => {
     const {id} = req.bro;
-    console.log("\x1b[91mgiving data\x1b[0m")
+    
     const findUser = await ANIbroModel.findById(id)
 
-    if (userExists(findUser, res)) {console.log('\x1b[91mUser not found\x1b[0m'); return}
+    if (userExists(findUser, res)) return
 
     const brosGenres = findUser?.genres;
     const aniList = findUser?.animeList;
     const manList = findUser?.mangaList;
 
-    console.log("\x1b[92mgot the data\x1b[0m")
+    
     
     if (!brosGenres) return res.status(200).json({
         message: 'none'
     })
 
-    console.log("\x1b[92mdata given\x1b[0m")
+    
 
     return res.status(200).json({
         message: 'Data Incoming!',

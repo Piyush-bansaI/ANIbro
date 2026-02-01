@@ -4,24 +4,28 @@ import { MdOutlineLogin } from "react-icons/md";
 import { FaUserNinja } from "react-icons/fa6";
 import { typeContext } from '../../Contexts/TypeContext';
 import { useNavigate } from 'react-router-dom';
+import { profilePicture } from '../../Contexts/ProfilePicContext';
 
 
 const ProfileDetails = forwardRef(({data, logout, setIsProfileClicked, isProfileClicked}, ref) => {
   const nav = useNavigate()
   const [mode, setMode, imageFetcher, jiken, langType, setLangType, langChanger, backend_URL] = useContext(typeContext)
-  
+  const {changePic, selectedImg, saveProfilePic, brosData, setBrosData, brosGenres, ToggleLogin, setToggleLogin, saveData, animeLst, mangaLst, deleteData, profileState, setProfileState} = useContext(profilePicture)
   
 
   const profile = () => {
     nav(`/profile/${encodeURIComponent(data.username)}`)
+    setProfileState("Profile")
     setIsProfileClicked(false)
   }
   const aniList = () => {
     nav(`/profile/animeList`)
+    setProfileState("Anime List")
     setIsProfileClicked(false)
   }
   const manList = () => {
     nav(`/profile/mangaList`)
+    setProfileState("Manga List")
     setIsProfileClicked(false)
   }
 
