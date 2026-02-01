@@ -31,7 +31,8 @@ const sendEmail = async (token, username, email) => {
                 {
                     headers: {
                         'api-key': process.env.BREVO_API,
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        accept: 'application/json'
                     }
                 }
             );
