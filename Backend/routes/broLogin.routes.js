@@ -42,7 +42,6 @@ router.get('/get-relations', async (req, res) => {
 router.use(authMiddleware)
 
 router.get('/userData', (req, res) => {
-    console.log(req.bro)
     return res.json({
         broData: req.bro
     })
@@ -54,7 +53,7 @@ router.post('/save-profile', async (req, res) => {
 
     const broData = await ANIbroModel.findById(id)
 
-    if (!userExists(broData, res)) return
+    if (userExists(broData, res)) return
 
     try {
         broData.avatar = newImg
@@ -82,7 +81,7 @@ router.post('/store-genre', async (req, res) => {
         {new: true}
     );
 
-    if (!userExists(findUser, res)) return
+    if (userExists(findUser, res)) return
 
     return res.status(200).json({
         message: 'Genres saved!'
@@ -94,7 +93,7 @@ router.get('/get-data', async (req, res) => {
     console.log("\x1b[91mgiving data\x1b[0m")
     const findUser = await ANIbroModel.findById(id)
 
-    if (!userExists(findUser, res)) {console.log('\x1b[91mUser not found\x1b[0m'); return}
+    if (userExists(findUser, res)) {console.log('\x1b[91mUser not found\x1b[0m'); return}
 
     const brosGenres = findUser?.genres;
     const aniList = findUser?.animeList;
@@ -124,7 +123,7 @@ router.post('/store-fav-anime', async (req, res) => {
 
     const user = await ANIbroModel.findById(id)
 
-    if (!userExists(user, res)) return
+    if (userExists(user, res)) return
 
     const list = mode === "Anime" ? user.animeList : user.mangaList
 
@@ -179,7 +178,7 @@ router.get('/delete-fav-anime', async (req, res) => {
         {new: true}
     )
 
-    if (!userExists(user, res)) return
+    if (userExists(user, res)) return
 
     return res.status(200).json({
         message: `${mode} deleted`
