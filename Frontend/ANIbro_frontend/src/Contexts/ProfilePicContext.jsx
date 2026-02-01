@@ -22,7 +22,6 @@ const ProfilePicContext = ({children}) => {
         return 'Profile'
       }
     })
-    console.log(brosData) // remove this 
     useEffect(() => {
       if (!brosData) return
 
