@@ -11,9 +11,9 @@ const sendEmail = async (token, username, email) => {
     const sendUrl = `${process.env.frontend_url}/verify/${token}`;
     const finalBody = body.replace("{{link}}", sendUrl) 
     try {
-        console.log("\x1b[93mSending Mail\x1b[0m")
         if (process.env.NODE_ENV === 'production') {
             console.log("\x1b[94msending using brevo\x1b[0m")
+            console.log("BREVO_API:", process.env.BREVO_API ? "FOUND" : "MISSING");
             await axios.post(
                 "https://api.brevo.com/v3/smtp/email",
                 {
@@ -38,7 +38,7 @@ const sendEmail = async (token, username, email) => {
             );
             console.log("\x1b[92msent mail using Brevo\x1b[0m");
         } else {
-            console.log("x1b[95msending mail using smtpx1b[0m")
+            console.log("\x1b[95msending mail using smtp\x1b[0m")
             await defineMail.sendMail({
                 from: `"ANIbro" <${process.env.ANIbro_mail}>`,
                 to: email,
