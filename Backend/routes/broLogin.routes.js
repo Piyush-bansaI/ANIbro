@@ -52,7 +52,7 @@ router.post('/save-profile', async (req, res) => {
 
     const broData = await ANIbroModel.findById(req.bro.id)
 
-    userExists(broData, res);
+    if (!userExists(broData, res)) return
 
     try {
         broData.avatar = newImg
@@ -80,7 +80,7 @@ router.post('/store-genre', async (req, res) => {
         {new: true}
     );
 
-    userExists(findUser, res);
+    if (!userExists(findUser, res)) return
 
     return res.status(200).json({
         message: 'Genres saved!'
@@ -92,7 +92,7 @@ router.get('/get-data', async (req, res) => {
 
     const findUser = await ANIbroModel.findById(id)
 
-    userExists(findUser, res);
+    if (!userExists(findUser, res)) return
 
     const brosGenres = findUser?.genres;
     const aniList = findUser?.animeList;
@@ -118,7 +118,7 @@ router.post('/store-fav-anime', async (req, res) => {
 
     const user = await ANIbroModel.findById(id)
 
-    userExists(user, res);
+    if (!userExists(user, res)) return
 
     const list = mode === "Anime" ? user.animeList : user.mangaList
 
@@ -173,7 +173,7 @@ router.get('/delete-fav-anime', async (req, res) => {
         {new: true}
     )
 
-    userExists(user, res);
+    if (!userExists(user, res)) return
 
     return res.status(200).json({
         message: `${mode} deleted`

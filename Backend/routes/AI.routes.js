@@ -14,7 +14,7 @@ router.post("/anime-recommender", async (req, res) => {
 
     const getUser = await ANIbroModel.findById(id)
 
-    exists(getUser, res)
+    if (!exists(getUser, res)) return
 
     const userGenres = getUser.genres
     
@@ -41,7 +41,7 @@ router.post("/manga-recommender", async (req, res) => {
 
     const getUser = await ANIbroModel.findById(id)
 
-    exists(getUser, res)
+    if (!exists(getUser, res)) return
 
     const userGenres = getUser.genres
 
