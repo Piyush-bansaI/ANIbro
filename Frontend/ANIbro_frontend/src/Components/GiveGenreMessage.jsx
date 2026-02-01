@@ -11,7 +11,7 @@ const GiveGenreMessage = () => {
 
   useEffect(() => {
     setShowGenreMessage(() => {
-    return (brosData && (brosGenres || brosGenres?.length === 0)) ? true : false
+    return (brosData && (!brosGenres || brosGenres?.length === 0)) ? true : false
   })
   }, [brosData, brosGenres])
   
