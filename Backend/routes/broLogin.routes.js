@@ -43,6 +43,7 @@ router.get('/userData', (req, res) => {
     return res.json({
         broData: req.bro
     })
+    console.log('data sent!')
 })
 
 router.post('/save-profile', async (req, res) => {
