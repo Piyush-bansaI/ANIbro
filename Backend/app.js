@@ -21,6 +21,10 @@ app.use(cors({
 }))
 const recommendRouter = require('./routes/AI.routes');
 
+if (process.env.NODE_ENV === "production") {
+    console.log("\x1b[93mProduction mode\x1b[0m")
+}
+
 app.use("/auth", authRouter)
 app.use("/user", broRouter)
 app.use("/ai", recommendRouter)

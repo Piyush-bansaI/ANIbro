@@ -53,7 +53,9 @@ router.post("/signup",
             avatar: 'coolGoku'
         })
 
-        await emailVerify(token, username, email)
+        await emailVerify(token, username, email).catch(err => res.status(400).json({
+            message: 'mail doesn\'t sent'+err
+        }))
 
         return res.status(201).json({
          message: "User Registered"
