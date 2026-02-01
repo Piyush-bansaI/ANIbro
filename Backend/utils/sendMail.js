@@ -13,6 +13,7 @@ const sendEmail = async (token, username, email) => {
     try {
         console.log("\x1b[93mSending Mail\x1b[0m")
         if (process.env.NODE_ENV === 'production') {
+            console.log("\x1b[94msending using brevo\x1b[0m")
             await axios.post(
                 "https://api.brevo.com/v3/smtp/email",
                 {
