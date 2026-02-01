@@ -1,1 +1,1 @@
-web: gunicorn Python_API.sendData:app
+web: gunicorn --chdir . Python_API.sendData:app

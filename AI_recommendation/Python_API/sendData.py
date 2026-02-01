@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from dotenv import load_dotenv
 load_dotenv()
 
