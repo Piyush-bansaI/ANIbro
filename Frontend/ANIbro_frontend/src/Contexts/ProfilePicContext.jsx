@@ -28,7 +28,6 @@ const ProfilePicContext = ({children}) => {
       const getData = async () => {
         try {
           const data = await backend_URL.get('/user/get-data')
-          console.log(data.data.data)
           if (data.data.message === 'Data Incoming!') {
               const datasData = data.data.data
               setBrosGenres(datasData.brosGenres)
@@ -36,7 +35,7 @@ const ProfilePicContext = ({children}) => {
               setMangaLst(datasData.manList)
           }
         } catch (error) {
-          console.log(error.response.data.message)
+          console.log(error)
         }
       }
 
