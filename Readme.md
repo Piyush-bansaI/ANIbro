@@ -53,7 +53,7 @@ it uses *MERN stack* and *python*, in which:
 ### Animes based in genre
 <img width="1905" height="964" alt="image" src="https://github.com/user-attachments/assets/7b16e38c-7f4a-4529-a7fa-1f08a49d87dc" />
 
-*There are more but the Readme will fill if I keep going* 😅
+*There are more but the Readme will starting to look like one piece episodes if I keep going* 😅 <br />
 **there is same for Manga too**
 ***
 
