@@ -25,7 +25,9 @@ def loadMangaData():
 
     cols = MangaDf.columns
 
-    KNN = NearestNeighbors(n_neighbors=100)
+    n_neighbors = min(100, len(MangaDf))
+
+    KNN = NearestNeighbors(n_neighbors=n_neighbors)
     KNN.fit(MangaDf)
     
 

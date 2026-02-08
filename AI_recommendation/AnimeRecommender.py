@@ -28,7 +28,9 @@ def loadAnimeData():
 
     cols = AniDf.columns
 
-    KNN = NearestNeighbors(n_neighbors=3000)
+    n_neighbors = min(3000, len(AniDf))
+
+    KNN = NearestNeighbors(n_neighbors=n_neighbors)
 
     KNN.fit(AniDf)
     
