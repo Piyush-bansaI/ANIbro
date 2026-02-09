@@ -5,7 +5,7 @@ const authMiddleware = require('../middlewares/cookieAuth');
 const ANIbroModel = require('../models/bros');
 const exists = require('../usefullFunctions/userExists');
 
-const AI = axios.create({baseURL: process.env.AI_URL})
+const AI = axios.create({baseURL: process.env.AI_URL || 'http://127.0.0.1:3001'})
 
 router.use(authMiddleware)
 

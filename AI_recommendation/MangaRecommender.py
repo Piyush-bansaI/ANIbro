@@ -5,34 +5,22 @@ import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
-rawMangaDf = None
-MangaDf = None
-cols = None
-KNN = None
 
-def loadMangaData():
-    global rawMangaDf, MangaDf, cols, KNN
+rawMangaData = pd.read_json(os.path.join(base_dir, "Data", "MangaData.json"))
+mangaData = pd.read_csv(os.path.join(base_dir, "Processed_Data", "Manga.csv"))
 
-    if KNN is not None:
-        return
+rawMangaDf = pd.DataFrame(rawMangaData).set_index('id')
+MangaDf = pd.DataFrame(mangaData).set_index('id')
 
-    
-    rawMangaData = pd.read_json(os.path.join(base_dir, "Data", "MangaData.json"))
-    mangaData = pd.read_csv(os.path.join(base_dir, "Processed_Data", "Manga.csv"))
+cols = MangaDf.columns
 
-    rawMangaDf = pd.DataFrame(rawMangaData).set_index('id')
-    MangaDf = pd.DataFrame(mangaData).set_index('id')
+n_neighbors = min(100, len(MangaDf))
 
-    cols = MangaDf.columns
-
-    n_neighbors = min(100, len(MangaDf))
-
-    KNN = NearestNeighbors(n_neighbors=n_neighbors)
-    KNN.fit(MangaDf)
+KNN = NearestNeighbors(n_neighbors=n_neighbors)
+KNN.fit(MangaDf)
     
 
 def mangaRecommender(user_genres):
-    loadMangaData()
 
     userVector = pd.Series(0, index=MangaDf.columns) # type: ignore
 

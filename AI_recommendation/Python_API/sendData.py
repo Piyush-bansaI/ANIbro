@@ -2,29 +2,18 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 import sys
-import threading
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from dotenv import load_dotenv
 load_dotenv()
 
-from AnimeRecommender import animeRecommender, loadAnimeData
-from MangaRecommender import mangaRecommender, loadMangaData
+from AnimeRecommender import animeRecommender
+from MangaRecommender import mangaRecommender
 
-def loadUp():
-    try:
-        print("\033[93mLoading Resources 📃\033[0m")
-        loadAnimeData()
-        loadMangaData()
-        print("\033[92mLoading Complete 💪\033[0m")
-    except Exception as e:
-        print("\033[91mERROR! 💥\033[0m", e)
 
 app = Flask(__name__)
 CORS(app)
-
-threading.Thread(target=loadUp, daemon=True).start()
 
 @app.errorhandler(Exception)
 def AIError(e):
@@ -90,4 +79,4 @@ def recommendManga():
 
 if __name__ == "__main__":
     debug = os.environ.get("NODE_ENV") != 'production'
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)), debug=debug)
+    app.run(port=int(os.environ.get("PORT", 3001)), debug=debug)
