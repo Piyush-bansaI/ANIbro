@@ -23,7 +23,7 @@ router.post("/anime-recommender", async (req, res) => {
     })
 
     try {
-        console.log("fetching data using this url: ", AI + `/recommend-anime`);
+        console.log("fetching data using this url: ", process.env.AI_URL + `/recommend-anime`);
         const getANIRecomendation = await AI.post('/recommend-anime', {
             genres: userGenres
         })
