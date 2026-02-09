@@ -23,6 +23,7 @@ router.post("/anime-recommender", async (req, res) => {
     })
 
     try {
+        console.log("fetching data using this url: ", AI + `/recommend-anime`);
         const getANIRecomendation = await AI.post('/recommend-anime', {
             genres: userGenres
         })
@@ -30,7 +31,7 @@ router.post("/anime-recommender", async (req, res) => {
             genre: getANIRecomendation.data.genre
         })
     } catch (error) {
-        return res.status(400).json({
+        return res.status(error?.status || 400).json({
             message: error.message
         })
     }
