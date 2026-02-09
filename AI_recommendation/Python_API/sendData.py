@@ -33,6 +33,7 @@ def Running():
 def recommendAnime():
     ANIbro_data = request.get_json(silent=True)
     if not ANIbro_data:
+        print("\033[95mdidn't got genres\033[0m")
         return jsonify({
             'message': 'didn\'t got the genre'
         }), 400
@@ -57,6 +58,7 @@ def recommendManga():
     ANIbro_data = request.get_json(silent=True)
 
     if not ANIbro_data:
+        print("\033[95mdidn't got genres\033[0m")
         return jsonify({
             'message': 'didn\'t got the genre'
         }), 400
@@ -79,4 +81,4 @@ def recommendManga():
 
 if __name__ == "__main__":
     debug = os.environ.get("NODE_ENV") != 'production'
-    app.run(port=int(os.environ.get("PORT", 3001)), debug=debug)
+    app.run(host="0.0.0.0" , port=int(os.environ.get("PORT", 3001)), debug=debug)
