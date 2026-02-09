@@ -39,10 +39,22 @@ it uses *MERN stack* and *python*, in which:
 - genre selection
 
 *and much more...*
-***
 
-some website Pics 📸
+# some website Pics 📸
+### Homepage 🏚️
+<img width="1916" height="968" alt="image" src="https://github.com/user-attachments/assets/0c96a7fe-588b-424a-bbe3-92e78bdf07e8" />
 
+### More Anime Info ℹ️
+<img width="1907" height="970" alt="image" src="https://github.com/user-attachments/assets/257c58d6-f762-48b6-a932-b10aac64eb15" />
+
+### User Profile 👤
+<img width="1913" height="958" alt="image" src="https://github.com/user-attachments/assets/d92d2747-4f63-41a4-be84-9eb8d68173f4" />
+
+### Animes based in genre
+<img width="1905" height="964" alt="image" src="https://github.com/user-attachments/assets/7b16e38c-7f4a-4529-a7fa-1f08a49d87dc" />
+
+*There are more but the Readme will starting to look like one piece episodes if I keep going* 😅 <br />
+**there is same for Manga too**
 ***
 
 **temp Incompletions:-**
@@ -66,7 +78,7 @@ also, I took help of some AI including chatGPT and all but all the imagining and
 tbh I have learned a lot with this project and made during my sem break.
 ***
 
-## story time:-
+## Story time:-
 
 During my sem, I was watching *One Piece* (and it is peak!). well at the end of the one piece, I was seaching for new anime and got thousands of anime.
 
