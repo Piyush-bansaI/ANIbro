@@ -24,7 +24,6 @@ def AIError(e):
 
 @app.get('/')
 def Running():
-    print('on the run')
     return {
         "message": "Server Running"
     }, 200

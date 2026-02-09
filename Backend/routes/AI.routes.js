@@ -5,7 +5,7 @@ const authMiddleware = require('../middlewares/cookieAuth');
 const ANIbroModel = require('../models/bros');
 const exists = require('../usefullFunctions/userExists');
 
-const AI = axios.create({baseURL: process.env.AI_URL || 'http://127.0.0.1:3001'})
+const AI = axios.create({baseURL: process.env.AI_URL || 'http://10.245.53.30:3001'})
 
 router.use(authMiddleware)
 
@@ -31,7 +31,7 @@ router.post("/anime-recommender", async (req, res) => {
             genre: getANIRecomendation.data.genre
         })
     } catch (error) {
-        return res.status(error?.status || 400).json({
+        return res.status(400).json({
             message: error.message
         })
     }
