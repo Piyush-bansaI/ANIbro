@@ -26,11 +26,11 @@ router.post("/anime-recommender", async (req, res) => {
         const getANIRecomendation = await AI.post('/recommend-anime', {
             genres: userGenres
         })
-        console.log(userGenres);
         return res.status(200).json({
             genre: getANIRecomendation.data.genre
         })
     } catch (error) {
+        console.log(error);
         return res.status(400).json({
             message: error.message
         })
