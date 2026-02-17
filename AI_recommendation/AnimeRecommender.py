@@ -61,7 +61,7 @@ def animeRecommender(user_genres: list): # function
     for col in top_25_anime.columns:
         if top_25_anime[col].dtype == "object":
             def parseJSON(s):
-                if isinstance(s, str) and s and s[0] in ['[', '{']:
+                if isinstance(s, str):
                     try:
                         return json.loads(s)
                     except:

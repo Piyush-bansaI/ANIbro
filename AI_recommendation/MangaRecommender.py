@@ -48,7 +48,7 @@ def mangaRecommender(user_genres):
     for col in recommended_manga.columns:
         if recommended_manga[col].dtype == "object":
             def parseJSON(s):
-                if isinstance(s, str) and s and s[0] in ['[', '{']:
+                if isinstance(s, str):
                     try:
                         return json.loads(s)
                     except:
