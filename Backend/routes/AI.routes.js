@@ -55,7 +55,7 @@ router.post("/manga-recommender", async (req, res) => {
             genres: userGenres
         })
         return res.status(200).json({
-            'genre': getMANRecomendation.data.genre
+            genre: getMANRecomendation.data.genre
         })
     } catch (error) {
         return res.status(400).json({message: error.message})

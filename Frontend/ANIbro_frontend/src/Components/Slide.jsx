@@ -31,7 +31,7 @@ const Slide = ({topAnimeBanner, loaded}) => {
         nextEl: ".next-btn"
     }}>
       {topAnimeBanner?.map((elem, idx) => {
-            return <SwiperSlide>
+            return <SwiperSlide key={idx}>
             {loaded ?
             <div key={idx} className={`min-w-full flex h-full relative transition-transform`}>
                 <div className='absolute w-[110%] h-70 top-[90%] blur-2xl -rotate-1 bg-color z-10'></div>
