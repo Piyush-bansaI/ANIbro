@@ -63,5 +63,6 @@ def animeRecommender(user_genres: list): # function
              
             top_25_anime[col] = top_25_anime[col].apply(parseJSON)
 
+    top_25_anime = top_25_anime.fillna(value=None)
 
     return top_25_anime.to_dict(orient='records')

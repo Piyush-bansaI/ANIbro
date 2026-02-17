@@ -53,4 +53,6 @@ def mangaRecommender(user_genres):
 
     recommended_manga = recommended_manga.head(25)
 
+    recommended_manga = recommended_manga.fillna(value=None)
+
     return recommended_manga.to_dict(orient='records')
