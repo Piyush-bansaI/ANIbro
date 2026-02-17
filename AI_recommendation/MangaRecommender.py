@@ -3,6 +3,7 @@ from sklearn.neighbors import NearestNeighbors
 import json
 import os
 import sqlite3
+from functions import parseJSON
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -46,13 +47,6 @@ def mangaRecommender(user_genres):
     
 
     for col in recommended_manga.columns:
-            def parseJSON(s):
-                if isinstance(s, str):
-                    try:
-                        return json.loads(s)
-                    except:
-                        return s
-                return s
             recommended_manga[col] = recommended_manga[col].apply(parseJSON)
 
     recommended_manga = recommended_manga[recommended_manga['score'] >= 5]

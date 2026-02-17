@@ -3,6 +3,7 @@ import sqlite3
 from sklearn.neighbors import NearestNeighbors
 import json
 import os
+from functions import parseJSON
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 AnimeData = pd.read_csv(os.path.join(base_dir, 'Processed_Data', 'Anime.csv'), index_col=['id'])
@@ -59,13 +60,7 @@ def animeRecommender(user_genres: list): # function
         top_25_anime = pd.read_sql(query, sqlConn, params=recommended_anime)
  
     for col in top_25_anime.columns:
-            def parseJSON(s):
-                if isinstance(s, str):
-                    try:
-                        return json.loads(s)
-                    except:
-                        return s 
-                return s  
+             
             top_25_anime[col] = top_25_anime[col].apply(parseJSON)
 
 
