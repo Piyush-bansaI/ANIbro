@@ -59,7 +59,6 @@ def animeRecommender(user_genres: list): # function
         top_25_anime = pd.read_sql(query, sqlConn, params=recommended_anime)
  
     for col in top_25_anime.columns:
-        if top_25_anime[col].dtype == "object":
             def parseJSON(s):
                 if isinstance(s, str):
                     try:
