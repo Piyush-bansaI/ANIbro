@@ -29,7 +29,6 @@ const RecommendContext = ({children}) => {
                 const getAnime = await backend_URL.post('/ai/anime-recommender')
                 if (getAnime.data.message === 'user didn\'t gave any fav genre') return
                 const filteredAnime = getAnime.data.genre?.filter(elem => !elem.genres.some(g => g.name === 'Hentai'))
-                console.log(getAnime);
                 setRecommendedAnime(filteredAnime || [])
                 (filteredAnime && sessionStorage.setItem('recommended-anime', JSON.stringify(filteredAnime)))
             } catch (error) {

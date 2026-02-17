@@ -26,6 +26,7 @@ router.post("/anime-recommender", async (req, res) => {
         const getANIRecomendation = await AI.post('/recommend-anime', {
             genres: userGenres
         })
+        console.log(getANIRecomendation)
         return res.status(200).json({
             genre: getANIRecomendation.data.genre
         })
@@ -35,25 +36,26 @@ router.post("/anime-recommender", async (req, res) => {
             message: error.message
         })
     }
-
+    
 })
 router.post("/manga-recommender", async (req, res) => {
     const {id} = req.bro;
-
+    
     const getUser = await ANIbroModel.findById(id)
-
+    
     if (exists(getUser, res)) return
-
+    
     const userGenres = getUser.genres
-
+    
     if (userGenres?.length === 0) return res.status(200).json({
         message: 'user didn\'t gave any fav genre'
     })
-
+    
     try {
         const getMANRecomendation = await AI.post('/recommend-manga', {
             genres: userGenres
         })
+        console.log(getMANRecomendation)
         return res.status(200).json({
             genre: getMANRecomendation.data.genre
         })
