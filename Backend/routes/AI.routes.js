@@ -26,10 +26,9 @@ router.post("/anime-recommender", async (req, res) => {
         const getANIRecomendation = await AI.post('/recommend-anime', {
             genres: userGenres
         })
-        console.log(JSON.parse(getANIRecomendation.data))
-        console.log((getANIRecomendation.data))
+        const data = JSON.parse(getANIRecomendation.data)
         return res.status(200).json({
-            genre: getANIRecomendation.data.genre
+            genre: data.genre
         })
     } catch (error) {
         console.log(error);
@@ -56,9 +55,9 @@ router.post("/manga-recommender", async (req, res) => {
         const getMANRecomendation = await AI.post('/recommend-manga', {
             genres: userGenres
         })
-        console.log(getMANRecomendation.data)
+        const data = JSON.parse(getMANRecomendation.data)
         return res.status(200).json({
-            genre: getMANRecomendation.data.genre
+            genre: data.genre
         })
     } catch (error) {
         return res.status(400).json({message: error.message})
