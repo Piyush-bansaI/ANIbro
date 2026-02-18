@@ -39,7 +39,7 @@ def recommendAnime():
 
     print("in the anime recommender")
     Anime_genres = ANIbro_data.get('genres', [])
-
+    
     if len(Anime_genres) == 0: 
         return jsonify({
                 "message": "Didn't got the genres"

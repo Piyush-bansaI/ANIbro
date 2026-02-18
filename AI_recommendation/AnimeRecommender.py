@@ -4,6 +4,7 @@ from sklearn.neighbors import NearestNeighbors
 import json
 import os
 from functions import parseJSON
+import numpy as np
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 AnimeData = pd.read_csv(os.path.join(base_dir, 'Processed_Data', 'Anime.csv'), index_col=['id'])
@@ -60,9 +61,8 @@ def animeRecommender(user_genres: list): # function
         top_25_anime = pd.read_sql(query, sqlConn, params=recommended_anime)
  
     for col in top_25_anime.columns:
-             
-            top_25_anime[col] = top_25_anime[col].apply(parseJSON)
+        top_25_anime[col] = top_25_anime[col].apply(parseJSON)
 
-    top_25_anime = top_25_anime.where(pd.notnull(top_25_anime), None)
+    top_25_anime = top_25_anime.replace({np.nan: None})
 
     return top_25_anime.to_dict(orient='records')

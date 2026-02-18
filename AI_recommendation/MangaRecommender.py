@@ -3,6 +3,7 @@ from sklearn.neighbors import NearestNeighbors
 import json
 import os
 import sqlite3
+import numpy as np
 from functions import parseJSON
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -53,6 +54,6 @@ def mangaRecommender(user_genres):
 
     recommended_manga = recommended_manga.head(25)
 
-    recommended_manga = recommended_manga.where(pd.notnull(recommended_manga), None) #type:ignore
+    recommended_manga = recommended_manga.replace({np.nan: None})
 
     return recommended_manga.to_dict(orient='records')
