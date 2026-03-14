@@ -31,6 +31,8 @@ app.use("/auth", authRouter)
 app.use("/user", broRouter)
 app.use("/ai", recommendRouter)
 
+app.get("/health", (req, res) => res.send("OK"))
+
 app.listen(port, () => {
     console.log("the backend is running at port", port)
 })
